@@ -1,0 +1,12 @@
+Port 22
+Protocol 2
+PermitRootLogin {{ ssh_permit_root_login }}
+PasswordAuthentication {{ ssh_password_authentication }}
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding no
+AllowTcpForwarding no
+ClientAliveInterval 300
+ClientAliveCountMax 0
+PrintMotd no
+Subsystem sftp /usr/libexec/openssh/sftp-server

@@ -1,0 +1,28 @@
+name: packer-validate
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Packer
+        uses: hashicorp/setup-packer@v3
+        with:
+          version: latest
+
+      - name: Packer init
+        run: packer init packer/base/al2023.pkr.hcl
+
+      - name: Packer fmt check
+        run: |
+          packer fmt -check -recursive packer
+
+      - name: Packer validate
+        run: packer validate packer/base/al2023.pkr.hcl

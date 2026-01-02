@@ -1,0 +1,6 @@
+---
+- name: Baseline hardening
+  hosts: all
+  become: true
+  roles:
+    - baseline
