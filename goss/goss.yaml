@@ -1,0 +1,12 @@
+package:
+  openssh-server:
+    installed: true
+
+service:
+  ssh:
+    enabled: true
+    running: true
+
+file:
+  /etc/ssh/sshd_config:
+    exists: true

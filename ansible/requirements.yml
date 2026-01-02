@@ -1,0 +1,5 @@
+---
+roles:
+  - name: ansible-lockdown.ubuntu22_cis
+    version: "2.0.2"
+

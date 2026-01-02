@@ -1,0 +1,6 @@
+---
+- name: Apply CIS baseline to Ubuntu 22.04
+  hosts: all
+  become: true
+  roles:
+    - role: ansible-lockdown.ubuntu22_cis
